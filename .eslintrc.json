@@ -24,7 +24,11 @@
       "semi": [2, "always"],
       "react/jsx-uses-react": 0,
       "react/react-in-jsx-scope": 0,
-      "space-before-function-paren": ["error", "never"]
+      "space-before-function-paren": ["error", "never"],
+      "no-use-before-define": 0,
+      "camelcase": 0,
+      "no-unused-vars": 0,
+      "@typescript-eslint/no-unused-vars": 2
     }
   }
   
