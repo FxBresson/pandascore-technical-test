@@ -5,3 +5,13 @@ export interface TeamNamePropsType {
   logo: string;
   orientation: Orientation
 }
+
+const TeamName = (props: TeamNamePropsType) => {
+  return (
+    <div>
+      { props.name }
+    </div>
+  );
+};
+
+export default TeamName;

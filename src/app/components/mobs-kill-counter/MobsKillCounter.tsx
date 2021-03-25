@@ -7,3 +7,13 @@ export interface MobsKillCounterPropsType {
   orientation: Orientation
   color: TeamColor
 }
+
+const MobsKillCounter = (props: MobsKillCounterPropsType) => {
+  return (
+    <div>
+
+    </div>
+  );
+};
+
+export default MobsKillCounter;

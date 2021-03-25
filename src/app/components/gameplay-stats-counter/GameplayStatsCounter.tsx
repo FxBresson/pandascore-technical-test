@@ -7,3 +7,13 @@ export interface GameplayStatsCounterPropsType {
   orientation: Orientation
   color: TeamColor
 }
+
+const GameplayStatsCounter = (props: GameplayStatsCounterPropsType) => {
+  return (
+    <div>
+
+    </div>
+  );
+};
+
+export default GameplayStatsCounter;
