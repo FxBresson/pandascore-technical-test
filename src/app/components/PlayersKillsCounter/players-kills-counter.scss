@@ -1,0 +1,16 @@
+.players-kills-counter {
+  display: flex;
+  background-color: #dfe1ec;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.players-kills-counter__kill-number {
+  padding: 14px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.players-kills-counter__kill-logo {
+  width: 21px;
+}

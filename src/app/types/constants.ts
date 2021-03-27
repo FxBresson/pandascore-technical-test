@@ -1,9 +1,9 @@
 export enum Orientation {
-  LEFT = 'LEFT',
-  RIGHT = 'RIGHT'
+  LEFT = 'left',
+  RIGHT = 'right'
 }
 
 export enum TeamColor {
-  BLUE = 'BLUE',
-  RED = 'RED'
+  BLUE = 'blue',
+  RED = 'red'
 }

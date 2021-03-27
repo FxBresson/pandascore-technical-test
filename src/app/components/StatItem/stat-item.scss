@@ -1,0 +1,17 @@
+.stat-item {
+  display: flex;
+  align-items: center;
+
+  &--color-blue {
+    fill: blue;
+  }
+
+  &--color-red {
+    fill: red;
+  }
+}
+
+.stat-item__icon {
+  margin-left: 8px;
+  margin-right: 8px;
+}

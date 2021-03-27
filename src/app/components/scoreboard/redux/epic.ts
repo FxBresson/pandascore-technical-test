@@ -1,4 +1,4 @@
-import { catchError, map, switchMap, takeUntil } from 'rxjs/operators';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import {
   ScoreboardActions,
@@ -6,9 +6,8 @@ import {
 } from './types';
 import { webSocket } from 'rxjs/webSocket';
 import { toScoreboardData } from '../../../helpers/scoreboard-data.helper';
-import { endMatch, updateScoreboard } from './actions';
 import { LolFrame } from '../../../types/WebsocketLolFrame';
-import { of } from 'rxjs';
+import { endMatch, updateScoreboard } from './actions';
 
 export const listenScoreboardData: Epic<ScoreboardActions, ScoreboardActions> = (action$) => {
   return action$.pipe(
@@ -22,10 +21,10 @@ export const listenScoreboardData: Epic<ScoreboardActions, ScoreboardActions> = 
             return updateScoreboard(toScoreboardData(frameData));
           }
         }),
-        catchError((e) => {
-          console.log(e);
-          return of(e);
-        }),
+        // catchError((e) => {
+        //   console.log(e);
+        //   return of(e);
+        // }),
         takeUntil(action$.ofType(ScoreboardActionTypes.END_MATCH))
       ))
   );

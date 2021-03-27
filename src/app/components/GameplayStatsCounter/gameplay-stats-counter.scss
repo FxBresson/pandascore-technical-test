@@ -1,0 +1,18 @@
+.gameplay-stats-counter {
+  background: #f4f7fa;
+  display: flex;
+  align-items: center;
+
+  &--orientation-left {
+    border-radius: 3px 0px 0px 3px;
+  }
+
+  &--orientation-right {
+    border-radius: 0px 3px 3px 0px;
+    flex-direction: row-reverse;
+  }
+}
+
+.gameplay-stats-counter__stat-item {
+  margin: 10px;
+}

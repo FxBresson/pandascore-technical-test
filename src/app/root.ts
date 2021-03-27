@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
-import scoreboardReducer from './components/scoreboard/redux/reducer';
-import scoreboardEpic from './components/scoreboard/redux/epic';
+import scoreboardReducer from './components/Scoreboard/redux/reducer';
+import scoreboardEpic from './components/Scoreboard/redux/epic';
 
 export const rootEpic = combineEpics(
   scoreboardEpic

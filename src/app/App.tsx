@@ -1,11 +1,11 @@
 import './App.scss';
-import Scoreboard from './components/scoreboard/Scoreboard';
+import Scoreboard from './components/Scoreboard/Scoreboard';
 
 function App() {
   return (
-    <div className="App">
+    <main className="app-container">
       <Scoreboard></Scoreboard>
-    </div>
+    </main>
   );
 }
 
