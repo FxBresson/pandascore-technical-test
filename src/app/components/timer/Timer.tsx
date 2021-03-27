@@ -5,7 +5,7 @@ export interface TimerPropsType {
 const Timer = (props: TimerPropsType) => {
   return (
     <div>
-
+      { props.timeInSeconds }
     </div>
   );
 };

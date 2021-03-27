@@ -5,13 +5,17 @@ export const toScoreboardData = (frameData: LolFrame): ScoreboardMatchData => {
   const {
     blue,
     red,
-    current_timestamp
+    current_timestamp,
+    game: {
+      finished
+    }
   } = frameData;
 
   return {
     blueTeam: toScoreboardTeamData(blue),
     redTeam: toScoreboardTeamData(red),
-    timer: current_timestamp
+    timer: current_timestamp,
+    finished
   };
 };
 

@@ -19,4 +19,5 @@ export interface ScoreboardMatchData {
   blueTeam: ScoreboardTeamData
   redTeam: ScoreboardTeamData
   timer: number
+  finished: boolean
 }

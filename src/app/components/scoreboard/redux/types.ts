@@ -1,7 +1,19 @@
-import { ScoreboardActionTypes } from './constants';
+import { ScoreboardMatchData } from '../../../types/ScoreboardData';
 
-export interface ScoreboardState {
+export type ScoreboardState = ScoreboardMatchData
 
+export enum ScoreboardActionTypes {
+  UPDATE = 'UPDATE',
+  LISTEN_DATA = 'LISTEN_DATA',
+  END_MATCH = 'END_MATCH'
+}
+
+export interface ListenScoreboardDataAction {
+  type: ScoreboardActionTypes.LISTEN_DATA
+}
+
+export interface EndScoreboardMatch {
+  type: ScoreboardActionTypes.END_MATCH
 }
 
 export interface UpdateScoreboardAction {
@@ -9,4 +21,7 @@ export interface UpdateScoreboardAction {
   payload: ScoreboardState
 }
 
-export type ScoreboardActions = UpdateScoreboardAction
+export type ScoreboardActions =
+  | UpdateScoreboardAction
+  | EndScoreboardMatch
+  | ListenScoreboardDataAction
