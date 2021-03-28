@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { startMatchDataListening } from './redux/actions';
 import Timer from '../Timer/Timer';
 import GameplayStatsCounter from '../GameplayStatsCounter/GameplayStatsCounter';
 import { Orientation, TeamColor } from '../../types/constants';
@@ -7,6 +6,8 @@ import PlayersKillCounter from '../PlayersKillsCounter/PlayersKillCounter';
 import MobsKillCounter from '../MobsKillCounter/MobsKillCounter';
 import TeamName from '../TeamName/TeamName';
 import './scoreboard.scss';
+import GoldGraph from '../GoldGraph/GoldGraph';
+import { startMatchDataListening } from './redux/actions';
 
 const Scoreboard = () => {
   const data = useAppSelector(state => state.scoreboard);
@@ -21,12 +22,12 @@ const Scoreboard = () => {
 
   return (
     <div className="scoreboard">
-      <header>
+      <header className="teamnames">
         <TeamName
           orientation={Orientation.LEFT}
           name={data.blueTeam.name}
         ></TeamName>
-        <div></div>
+        <div>vs</div>
         <TeamName
           orientation={Orientation.RIGHT}
           name={data.redTeam.name}
@@ -64,6 +65,15 @@ const Scoreboard = () => {
             {...data.redTeam.mobsKill}
           ></MobsKillCounter>
         </div>
+      </div>
+      <div>
+        <GoldGraph
+          blueTeamName={data.blueTeam.name}
+          redTeamName={data.redTeam.name}
+          blueTeamGold={data.blueTeam.stats.gold}
+          redTeamGold={data.redTeam.stats.gold}
+          timestamp={data.timer}
+        />
       </div>
     </div>
   );

@@ -1,18 +1,25 @@
 .scoreboard {
 }
 
+.teamnames {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .statbar {
+  margin-bottom: 50px;
 }
 
 .statbar__top {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
 }
 
 .statbar__bottom {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }

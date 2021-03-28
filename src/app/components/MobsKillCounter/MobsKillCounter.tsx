@@ -16,26 +16,32 @@ export interface MobsKillCounterPropsType {
 const MobsKillCounter = (props: MobsKillCounterPropsType) => {
   const { orientation, color } = props;
   return (
-    <div className="mobs-kills-counter">
-      <StatItem
-        color={color}
-        orientation={orientation}
-        value={props.herald}
-        Icon={HeraldLogo}
-      ></StatItem>
-      <StatItem
-        color={color}
-        orientation={orientation}
-        value={props.nashors}
-        Icon={BaronLogo}
-      ></StatItem>
-      <StatItem
-        color={color}
-        orientation={orientation}
-        value={props.drakes}
-        Icon={DrakeLogo}
-      ></StatItem>
-    </div>
+    <ul className={`mobs-kills-counter mobs-kills-counter--orientation-${orientation}`}>
+      <li>
+        <StatItem
+          color={color}
+          orientation={orientation}
+          value={props.herald}
+          Icon={HeraldLogo}
+        ></StatItem>
+      </li>
+      <li>
+        <StatItem
+          color={color}
+          orientation={orientation}
+          value={props.nashors}
+          Icon={BaronLogo}
+        ></StatItem>
+      </li>
+      <li>
+        <StatItem
+          color={color}
+          orientation={orientation}
+          value={props.drakes}
+          Icon={DrakeLogo}
+        ></StatItem>
+      </li>
+    </ul>
   );
 };
 

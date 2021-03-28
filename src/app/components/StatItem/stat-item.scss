@@ -1,13 +1,17 @@
+@import 'src/styles/variables';
+
 .stat-item {
   display: flex;
   align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
 
   &--color-blue {
-    fill: blue;
+    fill: $blue-team;
   }
 
   &--color-red {
-    fill: red;
+    fill: $red-team;
   }
 }
 

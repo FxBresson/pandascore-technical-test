@@ -17,7 +17,7 @@ const GameplayStatsCounter = (props: GameplayStatsCounterPropsType) => {
   const { orientation, color } = props;
   return (
     <ul className={`gameplay-stats-counter gameplay-stats-counter--orientation-${orientation}`}>
-      <li className="gameplay-stats-counter__stat-item">
+      <li>
         <StatItem
           color={color}
           orientation={orientation}
@@ -25,7 +25,7 @@ const GameplayStatsCounter = (props: GameplayStatsCounterPropsType) => {
           Icon={InhibitorsLogo}
         ></StatItem>
       </li>
-      <li className="gameplay-stats-counter__stat-item">
+      <li>
         <StatItem
           color={color}
           orientation={orientation}
@@ -33,7 +33,7 @@ const GameplayStatsCounter = (props: GameplayStatsCounterPropsType) => {
           Icon={TowerLogo}
         ></StatItem>
       </li>
-      <li className="gameplay-stats-counter__stat-item">
+      <li>
         <StatItem
           color={color}
           orientation={orientation}

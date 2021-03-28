@@ -1,4 +1,8 @@
 .mobs-kills-counter {
   display: flex;
   align-items: center;
+
+  &--orientation-right {
+    flex-direction: row-reverse;
+  }
 }

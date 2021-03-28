@@ -12,7 +12,7 @@ export interface StatItemPropsType {
 const formatNumberToDisplay = (number: number): string => {
   if (number / 1000 > 1) {
     // Allow to have 1 digit after decimal point. Prevent rounding caused by toFixed(1).
-    return (number / 1000).toString().slice(0, -2) + 'K';
+    return Math.trunc(number / 100) / 10 + 'K';
   }
   return number.toString();
 };
