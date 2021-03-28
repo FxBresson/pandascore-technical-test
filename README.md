@@ -12,6 +12,23 @@ Specs of the test can be found [here](https://gist.github.com/NicolasMarlier/597
 - redux-observable
 - recharts
 
+## How to start :
+
+```
+$ npm install
+$ npm run start
+```
+
+to launch the project
+
+and in another terminal
+
+```
+$ npm run serve
+```
+
+to launch the websocket server
+
 ## Here the list of implemented feats :
 
 - Data fetch started by an action caught by an epic with redux-observable
