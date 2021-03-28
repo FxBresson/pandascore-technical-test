@@ -8,12 +8,13 @@ import { webSocket } from 'rxjs/webSocket';
 import { toScoreboardData } from '../../../helpers/scoreboard-data.helper';
 import { LolFrame } from '../../../types/WebsocketLolFrame';
 import { endMatch, updateScoreboard } from './actions';
+import { environment } from '../../../../environments/dev.environment';
 
 export const listenScoreboardData: Epic<ScoreboardActions, ScoreboardActions> = (action$) => {
   return action$.pipe(
     ofType<ScoreboardActions>(ScoreboardActionTypes.LISTEN_DATA),
     switchMap(() =>
-      webSocket<LolFrame>('ws://localhost:4000/').pipe(
+      webSocket<LolFrame>(environment.webSocketUrl).pipe(
         map(frameData => {
           if (frameData.game.finished) {
             return endMatch();
@@ -21,10 +22,6 @@ export const listenScoreboardData: Epic<ScoreboardActions, ScoreboardActions> = 
             return updateScoreboard(toScoreboardData(frameData));
           }
         }),
-        // catchError((e) => {
-        //   console.log(e);
-        //   return of(e);
-        // }),
         takeUntil(action$.ofType(ScoreboardActionTypes.END_MATCH))
       ))
   );

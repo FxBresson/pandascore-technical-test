@@ -1,10 +1,12 @@
+@import 'src/styles/variables';
+
 .gameplay-stats-counter {
-  background: #f4f7fa;
-  display: flex;
   align-items: center;
+  background: $light-background;
+  display: flex;
   justify-content: space-around;
-  padding: 15px;
   min-width: 250px;
+  padding: 15px;
 
   &--orientation-left {
     border-radius: 3px 0px 0px 3px;

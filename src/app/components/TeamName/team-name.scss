@@ -1,11 +1,13 @@
+@import 'src/styles/variables';
+
 .team-name {
-  display: flex;
   align-items: center;
+  background: $light-background;
   border-radius: 3px;
+  display: flex;
   height: 35px;
-  background: #f4f7fa;
-  overflow: hidden;
   justify-content: flex-end;
+  overflow: hidden;
 
   &--orientation-right {
     flex-direction: row-reverse;
@@ -14,14 +16,14 @@
 
 .team-name__name {
   font-weight: 800;
-  text-transform: uppercase;
   margin-left: 20px;
   margin-right: 20px;
+  text-transform: uppercase;
 }
 
 .team-name__logo-container {
+  background: $dark-background;
   height: 100%;
-  background: #dfe1ec;
 }
 
 .team-name__logo {

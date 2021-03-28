@@ -13,22 +13,18 @@ const Scoreboard = () => {
   const data = useAppSelector(state => state.scoreboard);
   const dispatch = useAppDispatch();
 
-  const x = true;
-  if (x) {
-    dispatch(startMatchDataListening());
-  }
-
-  console.log(data);
+  // Dispatch listenng of match data when component is loaded
+  dispatch(startMatchDataListening());
 
   return (
     <div className="scoreboard">
-      <header className="teamnames">
+      <header className="team-names">
         <TeamName
           orientation={Orientation.LEFT}
           teamId={data.blueTeam.id}
           name={data.blueTeam.name}
         ></TeamName>
-        <div>vs</div>
+        <div className="team-names__vs">vs</div>
         <TeamName
           orientation={Orientation.RIGHT}
           teamId={data.redTeam.id}
@@ -43,8 +39,8 @@ const Scoreboard = () => {
             {...data.blueTeam.stats}
           ></GameplayStatsCounter>
           <PlayersKillCounter
-            teamAKills={data.blueTeam.stats.kills}
-            teamBKills={data.redTeam.stats.kills}
+            blueTeamKills={data.blueTeam.stats.kills}
+            redTeamKills={data.redTeam.stats.kills}
           ></PlayersKillCounter>
           <GameplayStatsCounter
             color={TeamColor.RED}

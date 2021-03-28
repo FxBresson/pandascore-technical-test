@@ -1,12 +1,10 @@
 @import 'src/styles/variables';
-@import 'src/styles/variables';
 
 .app-container {
-  max-width: 540px;
-  margin: auto;
-  padding: 50px 150px;
   background-color: $app-background-color;
   border-radius: 10px;
-
   box-shadow: 0px 23px 40px -20px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  max-width: 540px;
+  padding: 50px 150px;
 }

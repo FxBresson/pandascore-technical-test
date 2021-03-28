@@ -33,12 +33,8 @@ const GoldGraph = (props: GoldGraphPropsType) => {
 
   useEffect(() => {
     if (props.timestamp > 0) {
-      const dataToAdd: GoldGraphData = {
-        blueTeamGold: props.blueTeamGold,
-        redTeamGold: props.redTeamGold,
-        timestamp: props.timestamp
-      };
-      setGraphData([...graphData, dataToAdd]);
+      const { blueTeamGold, redTeamGold, timestamp } = props;
+      setGraphData([...graphData, { blueTeamGold, redTeamGold, timestamp }]);
     }
   }, [props]);
 
@@ -50,8 +46,20 @@ const GoldGraph = (props: GoldGraphPropsType) => {
         height={320}
         data={graphData}
       >
-        <XAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin', 'dataMax']} tickFormatter={(tick: number) => formatTime(tick)} dataKey="timestamp" />
-        <YAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin - 500', (dataMax: number) => Math.max(5000, (dataMax + 1000))]} />
+        <XAxis
+          type={'number'}
+          tickCount={5}
+          tick={{ fontSize: 12, fontWeight: 'bold' }}
+          minTickGap={10}
+          domain={['dataMin', 'dataMax']}
+          tickFormatter={(tick: number) => formatTime(tick)} dataKey="timestamp"
+        />
+        <YAxis
+          type={'number'}
+          tickCount={5}
+          tick={{ fontSize: 12, fontWeight: 'bold' }}
+          minTickGap={10}
+          domain={['dataMin - 500', (dataMax: number) => Math.max(5000, (dataMax + 1000))]} />
         <Tooltip
           formatter={(value: string, label: string) => [value, translations[label]]}
         />

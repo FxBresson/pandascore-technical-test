@@ -1,12 +1,13 @@
-.scoreboard {
+.team-names {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  justify-content: center;
+  margin-bottom: 35px;
 }
 
-.teamnames {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 60px 1fr;
-  align-items: center;
-  margin-bottom: 35px;
+.team-names__vs {
+  text-align: center;
 }
 
 .statbar {
@@ -15,13 +16,13 @@
 
 .statbar__top {
   display: grid;
-  justify-content: center;
   grid-template-columns: 1fr 120px 1fr;
+  justify-content: center;
   margin-bottom: 15px;
 }
 
 .statbar__bottom {
   display: grid;
-  justify-content: center;
   grid-template-columns: 1fr 80px 1fr;
+  justify-content: center;
 }

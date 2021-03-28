@@ -7,8 +7,6 @@ export interface TeamNamePropsType {
   orientation: Orientation
 }
 
-// `./assets/team_logo/${props.teamId}.png`
-
 const getTeamLogo = (teamId: number): string => teamId ? require.context('../../../assets/team_logo', true, /.png$/)(`./${teamId}.png`).default : '';
 
 const TeamName = (props: TeamNamePropsType) => {
