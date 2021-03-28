@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Pandascore LOL Match technical Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project my rendition of the technical test to join Pandascore ! It consists in listening to a websocket server to display real time data of a League of Legend match.
 
-## Available Scripts
+Specs of the test can be found [here](https://gist.github.com/NicolasMarlier/597a6fbf825d55bc31596b0567fbf0fb)
 
-In the project directory, you can run:
+## This project uses :
 
-### `yarn start`
+- React (via `create-react-app`)
+- Redux
+- rxjs
+- redux-observable
+- recharts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Here the list of implemented feats :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Data fetch started by an action caught by an epic with redux-observable
+- Connetion to the websocket with rxjs
+- Saving of data in the redux store
+- Real time display of the match data with React
+- Real time graph of team gold with a recharts line graph
+- Front improvement
 
-### `yarn test`
+## To-do list of possible improvements:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add components and helper tests
+- Handle websocket connetion errors and reconnection
+- Add more stats based on the available data (for example players stats)
+- Handle match ending (add animations ?)
