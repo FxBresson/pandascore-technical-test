@@ -1,0 +1,29 @@
+.team-name {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  height: 35px;
+  background: #f4f7fa;
+  overflow: hidden;
+  justify-content: flex-end;
+
+  &--orientation-right {
+    flex-direction: row-reverse;
+  }
+}
+
+.team-name__name {
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.team-name__logo-container {
+  height: 100%;
+  background: #dfe1ec;
+}
+
+.team-name__logo {
+  height: 100%;
+}

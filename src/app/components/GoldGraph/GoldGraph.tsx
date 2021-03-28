@@ -7,6 +7,7 @@ import {
 } from 'recharts';
 import { useEffect, useState } from 'react';
 import { formatTime } from '../../helpers/time.helper';
+import './gold-graph.scss';
 
 export interface GoldGraphPropsType {
   redTeamGold: number
@@ -42,20 +43,22 @@ const GoldGraph = (props: GoldGraphPropsType) => {
   }, [props]);
 
   return (
-    <LineChart
-      width={540}
-      height={320}
-      data={graphData}
-    >
-      {/* <CartesianGrid strokeDasharray="4 4" /> */}
-      <XAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin', 'dataMax']} tickFormatter={(tick: number) => formatTime(tick)} dataKey="timestamp" />
-      <YAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin - 500', (dataMax: number) => Math.max(5000, (dataMax + 1000))]} />
-      <Tooltip
-        formatter={(value: string, label: string) => [value, translations[label]]}
-      />
-      <Line type="linear" dataKey="redTeamGold" stroke="#ed5565" strokeWidth={2} dot={false} />
-      <Line type="linear" dataKey="blueTeamGold" stroke="#5580ed" strokeWidth={2} dot={false} />
-    </LineChart>
+    <div className="gold-graph">
+      <h3 className="gold-graph__title">Gold</h3>
+      <LineChart
+        width={540}
+        height={320}
+        data={graphData}
+      >
+        <XAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin', 'dataMax']} tickFormatter={(tick: number) => formatTime(tick)} dataKey="timestamp" />
+        <YAxis type={'number'} tickCount={5} tick={{ fontSize: 12, fontWeight: 'bold' }} minTickGap={10} domain={['dataMin - 500', (dataMax: number) => Math.max(5000, (dataMax + 1000))]} />
+        <Tooltip
+          formatter={(value: string, label: string) => [value, translations[label]]}
+        />
+        <Line type="linear" dataKey="redTeamGold" stroke="#ed5565" strokeWidth={2} dot={false} />
+        <Line type="linear" dataKey="blueTeamGold" stroke="#5580ed" strokeWidth={2} dot={false} />
+      </LineChart>
+    </div>
   );
 };
 

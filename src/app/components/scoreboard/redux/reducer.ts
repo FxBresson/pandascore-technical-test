@@ -4,7 +4,7 @@ const initialState: ScoreboardState = {
   timer: 0,
   finished: false,
   blueTeam: {
-    id: 1,
+    id: 0,
     name: '',
     mobsKill: {
       drakes: 0,
@@ -20,7 +20,7 @@ const initialState: ScoreboardState = {
     }
   },
   redTeam: {
-    id: 1,
+    id: 0,
     name: '',
     mobsKill: {
       drakes: 0,

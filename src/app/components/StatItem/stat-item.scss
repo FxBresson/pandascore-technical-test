@@ -13,6 +13,10 @@
   &--color-red {
     fill: $red-team;
   }
+
+  &--orientation-right {
+    flex-direction: row-reverse;
+  }
 }
 
 .stat-item__icon {

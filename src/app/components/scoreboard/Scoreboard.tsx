@@ -25,11 +25,13 @@ const Scoreboard = () => {
       <header className="teamnames">
         <TeamName
           orientation={Orientation.LEFT}
+          teamId={data.blueTeam.id}
           name={data.blueTeam.name}
         ></TeamName>
         <div>vs</div>
         <TeamName
           orientation={Orientation.RIGHT}
+          teamId={data.redTeam.id}
           name={data.redTeam.name}
         ></TeamName>
       </header>

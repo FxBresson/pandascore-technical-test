@@ -19,10 +19,9 @@ const formatNumberToDisplay = (number: number): string => {
 
 const StatItem = (props: StatItemPropsType) => {
   return (
-    <div className={`stat-item stat-item--color-${props.color}`}>
-      { props.orientation === Orientation.LEFT && <div>{ formatNumberToDisplay(props.value)}</div> }
+    <div className={`stat-item stat-item--color-${props.color} stat-item--orientation-${props.orientation}`}>
+      <div>{ formatNumberToDisplay(props.value)}</div>
       <props.Icon className="stat-item__icon" />
-      { props.orientation === Orientation.RIGHT && <div>{ formatNumberToDisplay(props.value)}</div> }
     </div>
   );
 };

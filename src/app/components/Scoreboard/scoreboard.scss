@@ -2,9 +2,11 @@
 }
 
 .teamnames {
-  display: flex;
-  align-items: center;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  margin-bottom: 35px;
 }
 
 .statbar {
@@ -12,14 +14,14 @@
 }
 
 .statbar__top {
-  display: flex;
-  align-items: center;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 1fr 120px 1fr;
   margin-bottom: 15px;
 }
 
 .statbar__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 80px 1fr;
 }
